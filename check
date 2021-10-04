@@ -1,0 +1,78 @@
+
+
+## API's
+
+
+* [GET /v2/servers](mongo)
+* [GET /v2/account/:account_num](AN)
+* [GET /v2/account/:telephone_num](TN)
+* [GET /v3/lrd](TN)
+* [PUT /v3/lrd/:telephone_num](TN)
+* [GET /v3/lrd/:account_id](AC)
+* [PUT /v3/lrd/:account_id](TN)
+* [DELETE  /v3/lrd/:account_id]()
+* [GET  /v3/collection/:account_id]()
+* [PUT  /v2/convert_time/:time]()
+* [GET  /v2/account/:account_id:TN]()
+
+
+
+## PUT /v3/lrd/:telephone_num
+### Description
+```
+This api allows user to update telephone number details for LRD
+
+- API Authentication
+  - JWT signature verification
+  - JWT validation  
+```
+
+
+### Request
+Content-Type must be application/json
+
+````
+--------------------------------------------------------------------------------------------
+Property                               Type                            Description
+--------------------------------------------------------------------------------------------
+telephone_number                      integer                       Telephone Number
+apps_token                            object
+api_key                               String                        API Key
+
+````
+
+### Response 
+* 200 OK
+* 4XX, 5XX
+
+
+## PUT /v3/lrd/:account_id
+### Description
+```
+This api allows user to update trunk account mapping using saville account id
+
+- API Authentication
+  - JWT signature verification
+  - JWT validation  
+```
+
+
+### Request
+Content-Type must be application/json
+
+````
+--------------------------------------------------------------------------------------------
+Property                           Type                            Description
+--------------------------------------------------------------------------------------------
+local_acct_id                      integer                       Local Account Number
+saville_acct_id                    integer                       Saville Account Number
+api_key                            String                        API Key
+file_content
+file_size
+file_processed_date
+
+````
+
+### Response 
+* 200 OK
+* 4XX, 5XX
